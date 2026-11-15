@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://your-frontend.vercel.app"],
     credentials: true,
   }),
 );
@@ -25,7 +25,7 @@ app.use(
 app.use(cookieParser());
 
 app.get("/", (_req, res) => {
-  res.send("Hello Mehedi");
+  res.send("Hello World");
 });
 
 // all routes
