@@ -96,8 +96,6 @@ export const Login = async (req, res) => {
     // jwt token use
     const token = await generateToken(user._id);
 
-    const isProduction = process.env.NODE_ENV === "production";
-
     res.cookie("token", token, {
       httpOnly: true,
       secure: true,
