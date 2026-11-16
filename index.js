@@ -19,7 +19,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://shop-ease-frontend-three.vercel.app",
+      "https://shop-ease-frontend-aupqifrlm-mehedi-jr-project.vercel.app",
     ],
     credentials: true,
   }),
@@ -35,7 +35,6 @@ app.get("/", (_req, res) => {
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
 
-// ডাটাবেজ কানেক্ট করার ফাংশন
 const startServer = async () => {
   try {
     await connectDb(dbUrl);
