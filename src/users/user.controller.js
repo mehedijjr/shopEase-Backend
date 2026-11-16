@@ -100,8 +100,8 @@ export const Login = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: isProduction,
-      sameSite: isProduction ? "none" : "lax",
+      secure: true,
+      sameSite: "none",
     });
 
     // success response
