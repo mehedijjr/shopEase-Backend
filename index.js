@@ -6,7 +6,10 @@ import userRouter from "./src/users/user.route.js";
 import productRouter from "./src/products/product.route.js";
 import cookieParser from "cookie-parser";
 
-dotenv.config();
+if (process.env.NODE_ENV !== "production") {
+  const dotenv = await import("dotenv");
+  dotenv.config();
+}
 
 const app = express();
 
