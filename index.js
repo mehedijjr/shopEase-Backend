@@ -6,10 +6,7 @@ import userRouter from "./src/users/user.route.js";
 import productRouter from "./src/products/product.route.js";
 import cookieParser from "cookie-parser";
 
-if (process.env.NODE_ENV !== "production") {
-  const dotenv = await import("dotenv");
-  dotenv.config();
-}
+dotenv.config();
 
 const app = express();
 
@@ -38,9 +35,11 @@ app.get("/", (_req, res) => {
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
 
+// ডাটাবেজ কানেক্ট করার ফাংশন
 const startServer = async () => {
   try {
     await connectDb(dbUrl);
+    console.log("Database connected successfully");
 
     if (process.env.NODE_ENV !== "production") {
       app.listen(port, () => {
@@ -48,7 +47,7 @@ const startServer = async () => {
       });
     }
   } catch (error) {
-    console.error(error);
+    console.error("Database connection error:", error);
   }
 };
 
