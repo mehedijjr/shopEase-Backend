@@ -20,6 +20,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://shop-ease-frontend-aupqifrlm-mehedi-jr-project.vercel.app",
+      "https://shop-ease-frontend-hutjm3kjp-mehedi-jr-project.vercel.app",
     ],
     credentials: true,
   }),

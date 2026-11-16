@@ -114,7 +114,7 @@ export const Login = async (req, res) => {
         token: token,
       },
     });
-    console.log("Login Successful");
+    
   } catch (error) {
     console.log("Login error: ", error);
 
